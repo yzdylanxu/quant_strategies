@@ -4,3 +4,4 @@ matplotlib
 scipy
 jupyter
 notebook
+yfinance
