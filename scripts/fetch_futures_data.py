@@ -1,4 +1,3 @@
-from datetime import datetime
 from pathlib import Path
 from backtesting.data.sources.yahoo_futures import FuturesInstrument
 

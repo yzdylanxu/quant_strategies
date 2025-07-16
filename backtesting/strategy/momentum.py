@@ -7,4 +7,5 @@ class MomentumStrategy:
     def generate_signal(self, prices: pd.Series) -> pd.Series:
         rolling_mean = prices.rolling(self.lookback).mean()
         signal = (prices > rolling_mean).astype(int)
-        return signal.shift(1).fillna(0)  # shift to avoid lookahead bias
+        # shift to avoid lookahead bias
+        return signal.shift(1).fillna(0)
