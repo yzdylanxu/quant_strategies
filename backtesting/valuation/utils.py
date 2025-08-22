@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+## SOFR rate, delete risk free rate
 def get_sharpe_ratio(returns: pd.Series, risk_free_rate: float = 0.05) -> float:
     if not isinstance(returns.index, pd.DatetimeIndex):
         raise ValueError("Index must be a pd.DatetimeIndex")

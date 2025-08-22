@@ -1,3 +1,5 @@
+## have version number
+
 pandas
 numpy
 matplotlib
@@ -5,3 +7,5 @@ scipy
 jupyter
 notebook
 yfinance
+blpapi
+xbbg
