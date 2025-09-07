@@ -1,7 +1,6 @@
 import pandas as pd
-from backtesting.pricing.pricing_engine import calculate_returns
 from backtesting.execution.executor import calculate_position, apply_slippage
-from backtesting.valuation.utils import get_sharpe_ratio, get_max_drawdown, annualize_return
+from backtesting.valuation.utils import get_sharpe_ratio, get_max_drawdown, annualize_return, calculate_returns
 
 class BacktestRunner:
     def __init__(self, prices: pd.Series, strategy, slippage_bps: float = 0.0):

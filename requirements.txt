@@ -7,5 +7,3 @@ scipy
 jupyter
 notebook
 yfinance
-blpapi
-xbbg

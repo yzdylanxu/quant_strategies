@@ -1,7 +1,12 @@
 import pandas as pd
 import numpy as np
 
-## SOFR rate, delete risk free rate
+def calculate_returns(prices: pd.Series) -> pd.Series:
+    return prices.pct_change().dropna() * 100
+
+def calculate_volatility(returns: pd.Series) -> float:
+    return returns.std() * (252 ** 0.5)
+
 def get_sharpe_ratio(returns: pd.Series, risk_free_rate: float = 0.05) -> float:
     if not isinstance(returns.index, pd.DatetimeIndex):
         raise ValueError("Index must be a pd.DatetimeIndex")
@@ -14,7 +19,6 @@ def get_sharpe_ratio(returns: pd.Series, risk_free_rate: float = 0.05) -> float:
 
     sharpe_ratio = (mean_daily / std_daily) * np.sqrt(252)
     return sharpe_ratio
-
 
 def get_max_drawdown(returns: pd.Series) -> float:
     cumulative = (1 + returns / 100).cumprod()
